@@ -5,6 +5,7 @@ public class Astrologo : Player
     public Sprite spriteAstrologo;
     private void Awake()
     {
+        this.name = this.name.Replace("(Clone)", "").Trim();
         Level = 6;
         Nombre = "Astrologo";
         Vida = 396;
