@@ -9,7 +9,7 @@ public class MenuSelection : MonoBehaviour
     public GameObject bandidoPrefab;
     public GameObject personajeActual;
 
-    private Vector3 spawnPosition = new Vector3(4f, 0, 0);
+    private Vector3 spawnPosition = new Vector3(4, -4, 0);
 
     public TextMeshProUGUI nombreText;
     public TextMeshProUGUI atributosText;
@@ -41,7 +41,7 @@ public class MenuSelection : MonoBehaviour
             Destroy(personajeActual);
         }
         personajeActual = Instantiate(prefab, spawnPosition, Quaternion.identity);
-        Debug.Log("Personaje seleccionado: " + personajeActual.name + "Presiona espacio para atacar");
+
         nombreText.text = personajeActual.name;
         Player playerScript = personajeActual.GetComponent<Player>();
         if (playerScript != null)
