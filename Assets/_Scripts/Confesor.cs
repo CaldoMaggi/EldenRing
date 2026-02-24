@@ -3,6 +3,19 @@ using UnityEngine;
 
 public class Confesor : Player
 {
+    void Start()
+    {
+        Player jugador = FindObjectOfType<Player>();
+
+        // Leer valores
+        Debug.Log("Vida del jugador: " + jugador.Vida);
+
+        // Modificar valores
+        jugador.Vida -= 20;
+        jugador.Level = 5;
+        jugador.Nombre = "Arthur";
+    }
+
     private void Start()
     {
         level = 10;
