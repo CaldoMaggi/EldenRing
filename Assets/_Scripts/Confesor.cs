@@ -11,36 +11,30 @@ public class Confesor : Player
         Debug.Log("Vida del jugador: " + jugador.Vida);
 
         // Modificar valores
-        jugador.Vida -= 20;
-        jugador.Level = 5;
-        jugador.Nombre = "Arthur";
-    }
-
-    private void Start()
-    {
-        level = 10;
-        nombre = "Confesor";
-        vida = 414;
-        concentracion = 88;
-        estamina = 96;
-        poderFisico = 50;
-        poderSanto = 70;
-        equipLoad = "mediano";
+        jugador.Level = 10;
+        jugador.Nombre = "Confesor";
+        jugador.Vida = 414;
+        jugador.Concentracion = 88;
+        jugador.Estamina = 96;
+        jugador.PoderFisico = 50;
+        jugador.PoderSanto = 70;
+        jugador.EquipLoad = "mediano";
+        jugador.Parry = true;
     }
     public void AtacarFisico()
     {
-        Debug.Log(nombre + " ataca con su espada y hace " + poderFisico + " puntos de daño");
+        Debug.Log(Nombre + " ataca con su espada y hace " + PoderFisico + " puntos de daño");
     }
 
     public void AtacarSanto()
     {
-        Debug.Log(nombre + " lanza un encantamiento y hace " + poderSanto + " puntos de daño");
+        Debug.Log(Nombre + " lanza un encantamiento y hace " + PoderSanto + " puntos de daño");
     }
 
-    public void Parry()
+    public void ParryAble()
     {
-        parry = true;
-        Debug.Log(nombre + " bloquea con su escudo azul de la grieta y reduce el daño recibido");
+        Parry = true;
+        Debug.Log(Nombre + " bloquea con su escudo azul de la grieta y reduce el daño recibido");
     }
 }
 
