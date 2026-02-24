@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class MenuSelection : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class MenuSelection : MonoBehaviour
     public GameObject personajeActual;
 
     public Vector3 spawnPosition = new Vector3(0, 0, 0);
+
+    private Astrologo astrologo; // referencia al objeto Astrologo
+
+
+    public TextMeshProUGUI nombreText;
+    public TextMeshProUGUI atributosText;
 
     void Update()
     {
@@ -38,6 +45,7 @@ public class MenuSelection : MonoBehaviour
         }
         personajeActual = Instantiate(prefab, spawnPosition, Quaternion.identity);
         Debug.Log("Personaje seleccionado: " + personajeActual.name + "Presiona espacio para atacar");
-    }
+        nombreText.text = personajeActual.name;
 
+    }
 }
