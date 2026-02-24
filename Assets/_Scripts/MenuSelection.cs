@@ -11,9 +11,6 @@ public class MenuSelection : MonoBehaviour
 
     public Vector3 spawnPosition = new Vector3(0, 0, 0);
 
-    private Astrologo astrologo; // referencia al objeto Astrologo
-
-
     public TextMeshProUGUI nombreText;
     public TextMeshProUGUI atributosText;
 

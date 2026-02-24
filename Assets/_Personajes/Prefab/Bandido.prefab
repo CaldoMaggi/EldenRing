@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1743646392051595838}
   - component: {fileID: -8210295669893839751}
   m_Layer: 0
-  m_Name: Peasant
+  m_Name: Bandido
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
