@@ -5,27 +5,28 @@ public class Bandido : Player
 {
     private void Start()
     {
-        level = 5;
-        nombre = "Bandido";
-        vida = 414;
-        concentracion = 82;
-        estamina = 96;
-        poderFisico = 70;
-        equipLoad = "mediano";
+        Level = 5;
+        Nombre = "Bandido";
+        Vida = 414;
+        Concentracion = 82;
+        Estamina = 96;
+        PoderFisico = 70;
+        EquipLoad = "Mediano";
+        Parry = true;
     }
     public void Atacar()
     {
-        Debug.Log(nombre + " ataca con su cuchillo y hace " + poderFisico + " puntos de daño");
+        Debug.Log($"{Nombre}+  ataca con su cuchillo y hace {PoderFisico}  puntos de daño");
     }
     public void AtacarArco()
     {
-        Debug.Log(nombre + " ataca con su arco corto y hace " + (poderFisico - 20) + " puntos de daño");
+        Debug.Log($"{Nombre} +  ataca con su arco corto y hace  {PoderFisico - 20} puntos de daño");
     }
 
-    public void Parry()
+    public void ParryAble()
     {
-        parry = true;
-        Debug.Log(nombre + " bloquea con su broquel y reduce el daño recibido");
+        Parry = true;
+        Debug.Log($"{Nombre} {(enabled ? "bloquea" : "deja de bloquear")} con su escudo");
     }
 }
 
