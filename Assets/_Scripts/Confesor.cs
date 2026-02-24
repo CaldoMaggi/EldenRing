@@ -1,40 +1,36 @@
-using System;
 using UnityEngine;
 
 public class Confesor : Player
 {
     void Start()
     {
-        Player jugador = FindObjectOfType<Player>();
+        Nombre = "Confesor";
+        Level = 10;
+        Vida = 414;
+        Concentracion = 88;
+        Estamina = 96;
+        PoderFisico = 50;
+        PoderSanto = 70;
+        EquipLoad = "Mediano";
+        Parry = true;
 
-        // Leer valores
-        Debug.Log("Vida del jugador: " + jugador.Vida);
-
-        // Modificar valores
-        jugador.Level = 10;
-        jugador.Nombre = "Confesor";
-        jugador.Vida = 414;
-        jugador.Concentracion = 88;
-        jugador.Estamina = 96;
-        jugador.PoderFisico = 50;
-        jugador.PoderSanto = 70;
-        jugador.EquipLoad = "mediano";
-        jugador.Parry = true;
+        Debug.Log($"Vida del jugador: {Vida}");
     }
+
     public void AtacarFisico()
     {
-        Debug.Log(Nombre + " ataca con su espada y hace " + PoderFisico + " puntos de daño");
+        Debug.Log($"{Nombre} ataca con su espada y hace {PoderFisico} puntos de daño");
     }
 
     public void AtacarSanto()
     {
-        Debug.Log(Nombre + " lanza un encantamiento y hace " + PoderSanto + " puntos de daño");
+        Debug.Log($"{Nombre} lanza un encantamiento y hace {PoderSanto} puntos de daño");
     }
 
-    public void ParryAble()
+    public void ParryAble(bool enabled)
     {
-        Parry = true;
-        Debug.Log(Nombre + " bloquea con su escudo azul de la grieta y reduce el daño recibido");
+        Parry = enabled;
+        Debug.Log($"{Nombre} {(enabled ? "bloquea" : "deja de bloquear")} con su escudo");
     }
 }
 
