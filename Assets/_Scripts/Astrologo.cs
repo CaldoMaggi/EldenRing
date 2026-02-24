@@ -1,16 +1,32 @@
+using System;
 using UnityEngine;
 
-public class Astrologo : MonoBehaviour
+public class Astrologo : Player
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
+        level = 6;
+        nombre = "Astrologo";
+        vida = 396;
+        concentracion = 95;
+        estamina = 94;
+        poderFisico = 20;
+        poderMagico = 90;
+        equipLoad = "ligero";
+    }
+    public void AtacarFisico()
+    {
+        Debug.Log(nombre + " ataca con su espada y hace " + poderFisico + " puntos de daño");
+    }
+    public void AtacarMagico()
+    {
+        Debug.Log(nombre + " lanza un guijarro de destellita y hace " + poderMagico + " puntos de daño");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Parry()
     {
-        
+        parry = true;
+        Debug.Log(nombre + " bloquea con su escudo de madera y reduce el daño recibido");
     }
 }
+
