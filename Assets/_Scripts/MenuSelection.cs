@@ -43,6 +43,16 @@ public class MenuSelection : MonoBehaviour
         personajeActual = Instantiate(prefab, spawnPosition, Quaternion.identity);
         Debug.Log("Personaje seleccionado: " + personajeActual.name + "Presiona espacio para atacar");
         nombreText.text = personajeActual.name;
+        Player playerScript = personajeActual.GetComponent<Player>();
+        if (playerScript != null)
+        {
+            atributosText.text = "Vida: " + playerScript.Vida + "\n" +
+                                  "Concentración: " + playerScript.Concentracion + "\n" +
+                                  "Poder Físico: " + playerScript.PoderFisico + "\n" +
+                                  "Poder Mágico: " + playerScript.PoderMagico + "\n" +
+                                  "Poder Santo: " + playerScript.PoderSanto + "\n" +
+                                  "Estamina: " + playerScript.Estamina;
 
+        }
     }
 }
