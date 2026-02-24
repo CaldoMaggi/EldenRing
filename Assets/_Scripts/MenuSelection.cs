@@ -8,6 +8,8 @@ public class MenuSelection : MonoBehaviour
     public GameObject bandidoPrefab;
     public GameObject personajeActual;
 
+    public Vector3 spawnPosition = new Vector3(0, 0, 0);
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -34,6 +36,7 @@ public class MenuSelection : MonoBehaviour
         {
             Destroy(personajeActual);
         }
+        personajeActual = Instantiate(prefab, spawnPosition, Quaternion.identity);
         Debug.Log("Personaje seleccionado: " + personajeActual.name + "Presiona espacio para atacar");
     }
 

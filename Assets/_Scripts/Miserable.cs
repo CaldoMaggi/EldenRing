@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class Miserable : Player
 {
-    private SpriteRenderer spriteRenderer;
-    private Sprite miserableSprite;
+    public Sprite spriteMiserable;
     private void Start()
     {
         Level = 1;
@@ -15,6 +14,10 @@ public class Miserable : Player
         PoderFisico = 40;
         EquipLoad = "ligero";
         Parry = false;
+        if (spriteRenderer != null && spriteMiserable != null) //que haya un sprite renderer y un sprite asignado
+        {
+            spriteRenderer.sprite = spriteMiserable;
+        }
     }
     public void Atacar()
     {

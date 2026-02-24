@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class Confesor : Player
 {
-     private SpriteRenderer spriteRenderer;
-     private Sprite confesorSprite;
+    public Sprite spriteConfesor;
     void Start()
     {
-        Nombre = "Confesor";
         Level = 10;
+        Nombre = "Confesor";
         Vida = 414;
         Concentracion = 88;
         Estamina = 96;
@@ -15,6 +14,10 @@ public class Confesor : Player
         PoderSanto = 70;
         EquipLoad = "Mediano";
         Parry = true;
+        if (spriteRenderer != null && spriteConfesor != null) //que haya un sprite renderer y un sprite asignado
+        {
+            spriteRenderer.sprite = spriteConfesor;
+        }
 
         Debug.Log($"Vida del jugador: {Vida}");
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4000010464396976}
   - component: {fileID: 95000013227593822}
   - component: {fileID: -1743646392051595838}
+  - component: {fileID: -8210295669893839751}
   m_Layer: 0
   m_Name: Peasant
   m_TagString: Untagged
@@ -111,6 +112,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8210295669893839751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010854855540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 303f2bcb72e69a349a3d7dd7d154fc2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: -1743646392051595838}
+  spriteBandido: {fileID: 21300014, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
 --- !u!1 &1000011210365404
 GameObject:
   m_ObjectHideFlags: 0

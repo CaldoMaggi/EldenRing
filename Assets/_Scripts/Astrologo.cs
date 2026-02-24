@@ -1,10 +1,8 @@
-using System;
 using UnityEngine;
 
 public class Astrologo : Player
 {
-    private SpriteRenderer spriteRenderer;
-    private Sprite astrologoSprite;
+    public Sprite spriteAstrologo;
     private void Start()
     {
         Level = 6;
@@ -16,6 +14,10 @@ public class Astrologo : Player
         PoderMagico = 90;
         EquipLoad = "ligero";
         Parry = true;
+        if (spriteRenderer != null && spriteAstrologo != null) //que haya un sprite renderer y un sprite asignado
+        {
+            spriteRenderer.sprite = spriteAstrologo;
+        }
     }
     public void AtacarFisico()
     {

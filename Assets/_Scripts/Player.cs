@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private int estamina;
     private string equipLoad; //ligero,mediano,pesado
     private bool parry = false;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     public string Nombre
     {

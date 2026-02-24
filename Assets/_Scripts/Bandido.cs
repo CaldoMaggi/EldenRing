@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class Bandido : Player
 {
-    private SpriteRenderer spriteRenderer;
-    private Sprite bandidoSprite;
+    public Sprite spriteBandido;
     private void Start()
     {
         Level = 5;
@@ -15,6 +14,10 @@ public class Bandido : Player
         PoderFisico = 70;
         EquipLoad = "Mediano";
         Parry = true;
+        if (spriteRenderer != null && spriteBandido != null) //que haya un sprite renderer y un sprite asignado
+        {
+            spriteRenderer.sprite = spriteBandido;
+        }
     }
     public void Atacar()
     {

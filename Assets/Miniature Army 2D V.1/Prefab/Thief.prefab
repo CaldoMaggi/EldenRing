@@ -627,6 +627,7 @@ GameObject:
   - component: {fileID: 4000013306724104}
   - component: {fileID: 95000010572177686}
   - component: {fileID: 5861894702745622416}
+  - component: {fileID: 2328732065242360632}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -727,6 +728,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2328732065242360632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012663239756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670263dd926c8fe438bce048ee2adbdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5861894702745622416}
+  spriteMiserable: {fileID: 21300014, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
 --- !u!1 &1000012730742446
 GameObject:
   m_ObjectHideFlags: 0
