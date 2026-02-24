@@ -3,7 +3,7 @@ using UnityEngine;
 public class Confesor : Player
 {
     public Sprite spriteConfesor;
-    void Start()
+    void Awake()
     {
         Level = 10;
         Nombre = "Confesor";

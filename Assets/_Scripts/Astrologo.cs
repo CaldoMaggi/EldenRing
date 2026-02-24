@@ -3,7 +3,7 @@ using UnityEngine;
 public class Astrologo : Player
 {
     public Sprite spriteAstrologo;
-    private void Start()
+    private void Awake()
     {
         Level = 6;
         Nombre = "Astrologo";

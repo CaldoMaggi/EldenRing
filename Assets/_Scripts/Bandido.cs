@@ -4,7 +4,7 @@ using UnityEngine;
 public class Bandido : Player
 {
     public Sprite spriteBandido;
-    private void Start()
+    private void Awake()
     {
         Level = 5;
         Nombre = "Bandido";

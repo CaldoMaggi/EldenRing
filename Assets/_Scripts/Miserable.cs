@@ -4,7 +4,7 @@ using UnityEngine;
 public class Miserable : Player
 {
     public Sprite spriteMiserable;
-    private void Start()
+    private void Awake()
     {
         Level = 1;
         Nombre = "Miserable";
