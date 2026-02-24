@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Confesor : Player
 {
+     private SpriteRenderer spriteRenderer;
+     private Sprite confesorSprite;
     void Start()
     {
         Nombre = "Confesor";

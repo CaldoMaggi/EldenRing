@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Miserable : Player
 {
+    private SpriteRenderer spriteRenderer;
+    private Sprite miserableSprite;
     private void Start()
     {
         Level = 1;

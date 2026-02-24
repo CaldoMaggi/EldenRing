@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Bandido : Player
 {
+    private SpriteRenderer spriteRenderer;
+    private Sprite bandidoSprite;
     private void Start()
     {
         Level = 5;

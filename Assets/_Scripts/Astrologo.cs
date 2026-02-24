@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Astrologo : Player
 {
+    private SpriteRenderer spriteRenderer;
+    private Sprite astrologoSprite;
     private void Start()
     {
         Level = 6;
