@@ -5,28 +5,29 @@ public class Astrologo : Player
 {
     private void Start()
     {
-        level = 6;
-        nombre = "Astrologo";
-        vida = 396;
-        concentracion = 95;
-        estamina = 94;
-        poderFisico = 20;
-        poderMagico = 90;
-        equipLoad = "ligero";
+        Level = 6;
+        Nombre = "Astrologo";
+        Vida = 396;
+        Concentracion = 95;
+        Estamina = 94;
+        PoderFisico = 20;
+        PoderMagico = 90;
+        EquipLoad = "ligero";
+        Parry = true;
     }
     public void AtacarFisico()
     {
-        Debug.Log(nombre + " ataca con su espada y hace " + poderFisico + " puntos de daño");
+        Debug.Log($"{Nombre} ataca con su espada y hace {PoderFisico} puntos de daño");
     }
     public void AtacarMagico()
     {
-        Debug.Log(nombre + " lanza un guijarro de destellita y hace " + poderMagico + " puntos de daño");
+        Debug.Log($"{Nombre} lanza un guijarro de destellita y hace {PoderMagico} puntos de daño");
     }
 
-    public void Parry()
+    public void ParryAble()
     {
-        parry = true;
-        Debug.Log(nombre + " bloquea con su escudo de madera y reduce el daño recibido");
+        Parry = true;
+        Debug.Log($"{Nombre} bloquea con su escudo de madera y reduce el daño recibido");
     }
 }
 

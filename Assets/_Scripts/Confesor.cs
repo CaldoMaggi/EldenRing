@@ -30,7 +30,7 @@ public class Confesor : Player
     public void ParryAble(bool enabled)
     {
         Parry = enabled;
-        Debug.Log($"{Nombre} {(enabled ? "bloquea" : "deja de bloquear")} con su escudo");
+        Debug.Log($"{Nombre} {(enabled ? "bloquea" : "deja de bloquear")} con su escudo"); // Si enabled es true, el mensaje dirá "bloquea", de lo contrario dirá "deja de bloquear"
     }
 }
 
