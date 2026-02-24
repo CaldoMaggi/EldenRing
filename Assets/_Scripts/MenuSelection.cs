@@ -9,7 +9,7 @@ public class MenuSelection : MonoBehaviour
     public GameObject bandidoPrefab;
     public GameObject personajeActual;
 
-    public Vector3 spawnPosition = new Vector3(0, 0, 0);
+    private Vector3 spawnPosition = new Vector3(4f, 0, 0);
 
     public TextMeshProUGUI nombreText;
     public TextMeshProUGUI atributosText;
