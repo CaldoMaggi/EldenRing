@@ -18,6 +18,9 @@ public class MenuSelection : MonoBehaviour
     public TextMeshProUGUI nombreText;
     public TextMeshProUGUI atributosText;
 
+    public AudioSource src;//AudioSource para reproducir el sonido del boton
+    public AudioClip sfx1;//AudioClip del sonido del boton
+
     public void NextCharacter()
     {
         personajeSeleccionado = (personajeSeleccionado + 1) % personajes.Count; // Incrementa el índice y vuelve al inicio si supera el número de personajes
@@ -25,17 +28,27 @@ public class MenuSelection : MonoBehaviour
         {
             case 0:
                 SeleccionarPersonaje(astrologoPrefab);
+                ReproducirSonido();
                 break;
             case 1:
                 SeleccionarPersonaje(miserablePrefab);
+                ReproducirSonido();
                 break;
             case 2:
                 SeleccionarPersonaje(confesorPrefab);
+                ReproducirSonido();
                 break;
             case 3:
                 SeleccionarPersonaje(bandidoPrefab);
+                ReproducirSonido();
                 break;
         }
+    }
+
+    void ReproducirSonido()
+    {
+        src.clip = sfx1;
+        src.Play();
     }
 
     void SeleccionarPersonaje(GameObject prefab)
