@@ -17,7 +17,26 @@ public class MenuSelection : MonoBehaviour
 
     public TextMeshProUGUI nombreText;
     public TextMeshProUGUI atributosText;
-    public 
+
+    public void NextCharacter()
+    {
+        personajeSeleccionado = (personajeSeleccionado + 1) % personajes.Count;
+        switch (personajeSeleccionado)
+        {
+            case 0:
+                SeleccionarPersonaje(astrologoPrefab);
+                break;
+            case 1:
+                SeleccionarPersonaje(miserablePrefab);
+                break;
+            case 2:
+                SeleccionarPersonaje(confesorPrefab);
+                break;
+            case 3:
+                SeleccionarPersonaje(bandidoPrefab);
+                break;
+        }
+    }
 
     void Update()
     {
