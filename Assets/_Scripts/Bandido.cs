@@ -6,6 +6,7 @@ public class Bandido : Player
     public Sprite spriteBandido;
     private void Awake()
     {
+        this.name = this.name.Replace("(Clone)", "").Trim();
         Level = 5;
         Nombre = "Bandido";
         Vida = 414;

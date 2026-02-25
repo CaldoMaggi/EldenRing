@@ -5,6 +5,7 @@ public class Confesor : Player
     public Sprite spriteConfesor;
     void Awake()
     {
+        this.name = this.name.Replace("(Clone)", "").Trim();
         Level = 10;
         Nombre = "Confesor";
         Vida = 414;
@@ -18,8 +19,6 @@ public class Confesor : Player
         {
             spriteRenderer.sprite = spriteConfesor;
         }
-
-        Debug.Log($"Vida del jugador: {Vida}");
     }
 
     public void AtacarFisico()

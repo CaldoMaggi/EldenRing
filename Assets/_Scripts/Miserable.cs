@@ -6,6 +6,7 @@ public class Miserable : Player
     public Sprite spriteMiserable;
     private void Awake()
     {
+        this.name = this.name.Replace("(Clone)", "").Trim();
         Level = 1;
         Nombre = "Miserable";
         Vida = 414;
