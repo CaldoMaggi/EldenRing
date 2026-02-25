@@ -20,7 +20,7 @@ public class MenuSelection : MonoBehaviour
 
     public void NextCharacter()
     {
-        personajeSeleccionado = (personajeSeleccionado + 1) % personajes.Count;
+        personajeSeleccionado = (personajeSeleccionado + 1) % personajes.Count; // Incrementa el índice y vuelve al inicio si supera el número de personajes
         switch (personajeSeleccionado)
         {
             case 0:
@@ -38,26 +38,6 @@ public class MenuSelection : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SeleccionarPersonaje(astrologoPrefab);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SeleccionarPersonaje(miserablePrefab);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SeleccionarPersonaje(confesorPrefab);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SeleccionarPersonaje(bandidoPrefab);
-        }
-    }
-
     void SeleccionarPersonaje(GameObject prefab)
     {
         if (personajeActual != null)
@@ -70,12 +50,15 @@ public class MenuSelection : MonoBehaviour
         Player playerScript = personajeActual.GetComponent<Player>();
         if (playerScript != null)
         {
-            atributosText.text = "Vida: " + playerScript.Vida + "\n" +
-                                  "Concentración: " + playerScript.Concentracion + "\n" +
-                                  "Poder Físico: " + playerScript.PoderFisico + "\n" +
-                                  "Poder Mágico: " + playerScript.PoderMagico + "\n" +
-                                  "Poder Santo: " + playerScript.PoderSanto + "\n" +
-                                  "Estamina: " + playerScript.Estamina;
+            atributosText.text = "Nivel: " + playerScript.Level + "\n" +
+                                 "Vida: " + playerScript.Vida + "\n" +
+                                 "Estamina: " + playerScript.Estamina + "\n" +
+                                 "Mana: " + playerScript.Concentracion + "\n" +
+                                 "Poder Físico: " + playerScript.PoderFisico + "\n" +
+                                 "Poder Mágico: " + playerScript.PoderMagico + "\n" +
+                                 "Poder Santo: " + playerScript.PoderSanto + "\n" +
+                                 "Equipamiento: " + playerScript.EquipLoad + "\n" +
+                                 "Parry: " + (playerScript.Parry ? "Si" : "No");
 
         }
     }
