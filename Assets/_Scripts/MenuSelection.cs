@@ -1,8 +1,12 @@
 using UnityEngine;
 using TMPro;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class MenuSelection : MonoBehaviour
 {
+    List<int> personajes = new List<int> {1,2,3,4};
+    private int personajeSeleccionado = 0;
     public GameObject astrologoPrefab;
     public GameObject miserablePrefab;
     public GameObject confesorPrefab;
@@ -13,6 +17,7 @@ public class MenuSelection : MonoBehaviour
 
     public TextMeshProUGUI nombreText;
     public TextMeshProUGUI atributosText;
+    public 
 
     void Update()
     {
