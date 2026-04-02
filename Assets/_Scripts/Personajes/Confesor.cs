@@ -14,13 +14,13 @@ public class Confesor : Player
 
     public void AtacarSanto()
     {
-        Debug.Log($"{Nombre} lanza un encantamiento y hace {PoderSanto} puntos de daño");
+        Debug.Log($"{Nombre} hace un milagro y hace {PoderSanto} puntos de daño");
     }
 
-    public void ParryAble(bool enabled)
+    public void ParryAble()
     {
-        Parry = enabled;
-        Debug.Log($"{Nombre} {(enabled ? "bloquea" : "deja de bloquear")} con su escudo"); // Si enabled es true, el mensaje dirá "bloquea", de lo contrario dirá "deja de bloquear"
+        Parry = true;
+        Debug.Log($"{Nombre}con su escudo");
     }
 }
 

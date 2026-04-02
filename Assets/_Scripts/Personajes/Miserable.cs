@@ -12,11 +12,5 @@ public class Miserable : Player
     {
         Debug.Log($"{Nombre} ataca con su garrote y hace {PoderFisico} puntos de daño");
     }
-
-    public void ParryAble()
-    {
-        Parry = false;
-        Debug.Log($"{Nombre} no puede bloquear sin escudo");
-    }
 }
 
