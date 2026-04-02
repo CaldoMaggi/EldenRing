@@ -3,4 +3,5 @@ using UnityEngine;
 public interface IGuardable
 {
     void AñadirAlInventario();
+    void EliminarDelInventario();
 }
