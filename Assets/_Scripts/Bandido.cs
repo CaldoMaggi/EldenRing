@@ -4,21 +4,9 @@ using UnityEngine;
 public class Bandido : Player
 {
     public Sprite spriteBandido;
-    private void Awake()
+
+    public Bandido() : base("Bandido", 5, 414, 82, 70, 0, 0, 96, "Mediano")
     {
-        this.name = this.name.Replace("(Clone)", "").Trim();
-        Level = 5;
-        Nombre = "Bandido";
-        Vida = 414;
-        Concentracion = 82;
-        Estamina = 96;
-        PoderFisico = 70;
-        EquipLoad = "Mediano";
-        Parry = true;
-        if (spriteRenderer != null && spriteBandido != null) //que haya un sprite renderer y un sprite asignado
-        {
-            spriteRenderer.sprite = spriteBandido;
-        }
     }
     public void Atacar()
     {

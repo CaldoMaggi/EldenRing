@@ -3,24 +3,10 @@ using UnityEngine;
 public class Confesor : Player
 {
     public Sprite spriteConfesor;
-    void Awake()
-    {
-        this.name = this.name.Replace("(Clone)", "").Trim();
-        Level = 10;
-        Nombre = "Confesor";
-        Vida = 414;
-        Concentracion = 88;
-        Estamina = 96;
-        PoderFisico = 50;
-        PoderSanto = 70;
-        EquipLoad = "Mediano";
-        Parry = true;
-        if (spriteRenderer != null && spriteConfesor != null) //que haya un sprite renderer y un sprite asignado
-        {
-            spriteRenderer.sprite = spriteConfesor;
-        }
-    }
 
+    public Confesor() : base("Confesor", 10, 414, 88, 50, 0, 70, 96, "Mediano")
+    {
+    }
     public void AtacarFisico()
     {
         Debug.Log($"{Nombre} ataca con su espada y hace {PoderFisico} puntos de daño");

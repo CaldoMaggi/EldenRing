@@ -59,7 +59,7 @@ public class MenuSelection : MonoBehaviour
         }
         personajeActual = Instantiate(prefab, spawnPosition, Quaternion.identity);
 
-        nombreText.text = personajeActual.name;
+        nombreText.text = personajeActual.name.Replace("(Clone)", "").Trim();
         Player playerScript = personajeActual.GetComponent<Player>();
         if (playerScript != null)
         {

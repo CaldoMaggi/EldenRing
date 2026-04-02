@@ -15,6 +15,18 @@ public class Player : MonoBehaviour
     private bool parry = false;
     public SpriteRenderer spriteRenderer;
 
+    public Player(string nombre, int level, int vida, int concentracion, int poderFisico, int poderMagico, int poderSanto, int estamina, string equipLoad)
+    {
+        this.nombre = nombre;
+        this.level = level;
+        this.vida = vida;
+        this.concentracion = concentracion;
+        this.poderFisico = poderFisico;
+        this.poderMagico = poderMagico;
+        this.poderSanto = poderSanto;
+        this.estamina = estamina;
+        this.equipLoad = equipLoad;
+    }
     public string Nombre
     {
         get { return nombre; }

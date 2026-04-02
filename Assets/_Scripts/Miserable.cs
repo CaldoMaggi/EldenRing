@@ -4,21 +4,9 @@ using UnityEngine;
 public class Miserable : Player
 {
     public Sprite spriteMiserable;
-    private void Awake()
+
+    public Miserable() : base("Miserable", 1, 414, 78, 40, 0, 0, 96, "ligero")
     {
-        this.name = this.name.Replace("(Clone)", "").Trim();
-        Level = 1;
-        Nombre = "Miserable";
-        Vida = 414;
-        Concentracion = 78;
-        Estamina = 96;
-        PoderFisico = 40;
-        EquipLoad = "ligero";
-        Parry = false;
-        if (spriteRenderer != null && spriteMiserable != null) //que haya un sprite renderer y un sprite asignado
-        {
-            spriteRenderer.sprite = spriteMiserable;
-        }
     }
     public void Atacar()
     {
