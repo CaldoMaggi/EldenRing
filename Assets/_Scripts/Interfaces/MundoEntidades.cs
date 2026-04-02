@@ -2,10 +2,21 @@ using UnityEngine;
 
 public abstract class MundoEntidades
 {
-    public string nombre; // Nombre del ser
-    public void Descripcion()
+    private string nombre; // Nombre del ser
+    private Vector2 posicion; // Posición en el mundo del ser
+
+    public void Aparecer()
     {
-        Debug.Log($"Este es un {nombre}");// Método para el nombre del ser
+        Debug.Log($"El {nombre} ha aparecido en el mundo");// Método para la aparición del ser
     }
 
+    public void Posicion()
+    {
+        Debug.Log($"El {nombre} se encuentra en la posición {posicion}");// Método para la posición del ser
+    }
+
+    public void Interactuar()
+    {
+        Debug.Log($"El {nombre} es interactuable");// Método para la interacción del ser
+    }
 }

@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     public Player(string nombre, int level, int vida, int concentracion, int poderFisico, int poderMagico, int poderSanto, int estamina, string equipLoad)
-    {
+    {//constructor tan largo vale
         this.nombre = nombre;
         this.level = level;
         this.vida = vida;
