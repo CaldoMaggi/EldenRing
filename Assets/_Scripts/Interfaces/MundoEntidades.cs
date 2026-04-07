@@ -3,20 +3,21 @@ using UnityEngine;
 public abstract class MundoEntidades
 {
     private string nombre; // Nombre del ser
-    private Vector2 posicion; // Posición en el mundo del ser
+    private Vector2 posicion; // Posiciï¿½n en el mundo del ser
 
     public void Aparecer()
     {
-        Debug.Log($"El {nombre} ha aparecido en el mundo");// Método para la aparición del ser
+        Debug.Log($"El {nombre} ha aparecido en el mundo");// Mï¿½todo para la apariciï¿½n del ser
     }
 
     public void Posicion()
     {
-        Debug.Log($"El {nombre} se encuentra en la posición {posicion}");// Método para la posición del ser
+        Debug.Log($"El {nombre} se encuentra en la posiciï¿½n {posicion}");// Mï¿½todo para la posiciï¿½n del ser
     }
 
-    public void Interactuar()
-    {
-        Debug.Log($"El {nombre} es interactuable");// Método para la interacción del ser
-    }
+    public abstract void Interactuar();
+    // Interactuar no me lo lee como abstracto, por eso concatene.
+   /* {
+        Debug.Log($"El {nombre} es interactuable");// Mï¿½todo para la interacciï¿½n del ser
+    }*/
 }
