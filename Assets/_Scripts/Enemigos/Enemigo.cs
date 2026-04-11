@@ -7,13 +7,7 @@ public class Enemigo : MonoBehaviour, IEnemigos
     protected int vida;
     protected int danio;
     public GameObject target;
-    public Enemigo(string nombre, int vida, int danio)
-    {
-        this.nombre = nombre;
-        this.vida = vida;
-        this.danio = danio;
-    }
-
+    protected virtual void Awake() { }
     public void RecibirDaño(float cantidad)
     {
         vida -= (int)cantidad;
