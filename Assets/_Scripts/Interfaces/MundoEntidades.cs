@@ -15,9 +15,9 @@ public abstract class MundoEntidades
         Debug.Log($"El {nombre} se encuentra en la posici�n {posicion}");// M�todo para la posici�n del ser
     }
 
-    public abstract void Interactuar();
-    // Interactuar no me lo lee como abstracto, por eso concatene.
-   /* {
-        Debug.Log($"El {nombre} es interactuable");// M�todo para la interacci�n del ser
-    }*/
+    public virtual void Interactuar()
+    {
+        Debug.Log($"El {nombre} es interactuable"); // comportamiento por defecto
+    }
+
 }

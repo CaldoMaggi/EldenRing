@@ -1,7 +1,8 @@
-using UnityEngine;
-using TMPro;
 using NUnit.Framework;
 using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuSelection : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class MenuSelection : MonoBehaviour
     public AudioSource src;//AudioSource para reproducir el sonido del boton
     public AudioClip sfx1;//AudioClip del sonido del boton
 
+    private GameManager gameManager;
     public void NextCharacter()
     {
         personajeSeleccionado = (personajeSeleccionado + 1) % personajes.Count; // Incrementa el índice y vuelve al inicio si supera el número de personajes
@@ -61,6 +63,12 @@ public class MenuSelection : MonoBehaviour
 
         nombreText.text = personajeActual.name.Replace("(Clone)", "").Trim();
         Player playerScript = personajeActual.GetComponent<Player>();
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("GameManager no existe en la escena!");
+            return;
+        }
+        GameManager.Instance.GuardarSeleccion(prefab);
         if (playerScript != null)
         {
             atributosText.text = "Nivel: " + playerScript.Level + "\n" +
@@ -72,7 +80,6 @@ public class MenuSelection : MonoBehaviour
                                  "Poder Santo: " + playerScript.PoderSanto + "\n" +
                                  "Equipamiento: " + playerScript.EquipLoad + "\n" +
                                  "Parry: " + (playerScript.Parry ? "Si" : "No");
-
         }
     }
 }
