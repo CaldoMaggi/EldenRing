@@ -82,4 +82,10 @@ public class MenuSelection : MonoBehaviour
                                  "Parry: " + (playerScript.Parry ? "Si" : "No");
         }
     }
+
+    public void CambiarEscena(string nombreEscena)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("DemoPersonaje");
+    }
+
 }

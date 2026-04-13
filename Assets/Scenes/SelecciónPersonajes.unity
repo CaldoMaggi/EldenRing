@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 591449242}
   - component: {fileID: 591449241}
   m_Layer: 5
-  m_Name: Button
+  m_Name: next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 661398316}
   - component: {fileID: 661398315}
   m_Layer: 5
-  m_Name: Button
+  m_Name: iniciar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1114,8 +1114,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1616926653}
-        m_TargetAssemblyTypeName: CambioEscena, Assembly-CSharp
+      - m_Target: {fileID: 68723575}
+        m_TargetAssemblyTypeName: MenuSelection, Assembly-CSharp
         m_MethodName: CambiarEscena
         m_Mode: 5
         m_Arguments:
@@ -1743,7 +1743,6 @@ GameObject:
   - component: {fileID: 1616926651}
   - component: {fileID: 1616926650}
   - component: {fileID: 1616926649}
-  - component: {fileID: 1616926653}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1837,18 +1836,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1616926653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616926648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecc4a57fc71811b4ba0978193e6da06f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2017258292
 GameObject:
   m_ObjectHideFlags: 0
