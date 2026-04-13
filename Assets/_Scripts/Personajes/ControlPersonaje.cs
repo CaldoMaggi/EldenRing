@@ -41,26 +41,28 @@ public class ControlPersonaje : MonoBehaviour
 
     void Update() //movimiento simple con WASD o flechas
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector2.right * Time.deltaTime * velocidad * horizontalInput);
-        transform.Translate(Vector2.up * Time.deltaTime * velocidad * verticalInput);
+        // Creamos el vector de movimiento
+        Vector3 direccion = new Vector3(horizontal, vertical, 0);
 
-        VoltearSprite();
+        // Movimiento usando Space.World para que no se inviertan los controles
+        transform.Translate(direccion * velocidad * Time.deltaTime, Space.World);
+
+        VoltearSprite(horizontal);
     }
 
-    void VoltearSprite()
+    void VoltearSprite(float horizontal)
     {
-        // Si nos movemos a la derecha
-        if (horizontalInput > 0.1f)
+        if (horizontal < -0.1f)
         {
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
-        // Si nos movemos a la izquierda
-        else if (horizontalInput < -0.1f)
+        // Si presiona derecha, volvemos a 0 grados
+        else if (horizontal > 0.1f)
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
     }
 
