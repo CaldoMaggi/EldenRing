@@ -6,7 +6,6 @@ public class Enemigo : MonoBehaviour, IEnemigos
     protected string nombre;
     protected int vida;
     protected int danio;
-    public GameObject target;
     protected virtual void Awake() { }
     public void RecibirDaño(float cantidad)
     {

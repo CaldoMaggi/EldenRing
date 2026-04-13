@@ -6,7 +6,7 @@ public class Demonio : Enemigo
     {
         base.Awake();
         nombre = "Demonio";
-        vida = 100;
+        vida = 100; 
         danio = 10;
         Debug.Log($"[Demonio] Awake ejecutado — danio: {danio}");
     }
