@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Confesor : Player
 {
-    public Sprite spriteConfesor;
-
     public Confesor() : base("Confesor", 10, 414, 88, 50, 0, 70, 96, "Mediano")
     {
     }

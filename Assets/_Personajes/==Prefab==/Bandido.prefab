@@ -155,7 +155,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &-4513531343110651716
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e097203dd3d3f4daacbedce0129e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: -1743646392051595838}
 --- !u!1 &1000011210365404
 GameObject:
   m_ObjectHideFlags: 0

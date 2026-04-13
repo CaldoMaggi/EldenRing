@@ -6,9 +6,9 @@ public class Demonio : Enemigo
     {
         base.Awake();
         nombre = "Demonio";
-        vida = 100; 
-        danio = 10;
-        Debug.Log($"[Demonio] Awake ejecutado — danio: {danio}");
+        vida = 200; 
+        danio = 100;
+        Debug.Log($"Demonio ha aparecido y hace {danio} daño al tocarlo");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

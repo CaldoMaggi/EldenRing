@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class Miserable : Player
 {
-    public Sprite spriteMiserable;
-
     public Miserable() : base("Miserable", 1, 414, 78, 40, 0, 0, 96, "ligero")
     {
     }

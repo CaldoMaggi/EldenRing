@@ -9,15 +9,21 @@ public class ControlPersonaje : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
     private Rigidbody2D rb;
+    [SerializeField]private SpriteRenderer spriteRenderer;
 
     void Awake()
     {
-        // Se deshabilita solo al instanciarse en Escena 0
+        // Se deshabilita solo al instanciarse en Escena 0(para q no se mueva en el menu)
         enabled = false;
     }
 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("¡Oye! El objeto " + gameObject.name + " no tiene un SpriteRenderer.");
+        }
         rb = GetComponent<Rigidbody2D>();
         if (GameManager.instancia != null)
         {
@@ -40,6 +46,22 @@ public class ControlPersonaje : MonoBehaviour
 
         transform.Translate(Vector2.right * Time.deltaTime * velocidad * horizontalInput);
         transform.Translate(Vector2.up * Time.deltaTime * velocidad * verticalInput);
+
+        VoltearSprite();
+    }
+
+    void VoltearSprite()
+    {
+        // Si nos movemos a la derecha
+        if (horizontalInput > 0.1f)
+        {
+            spriteRenderer.flipX = false;
+        }
+        // Si nos movemos a la izquierda
+        else if (horizontalInput < -0.1f)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     public void RecibirDaño(float cantidad) //cada que demonio toque al jugador resta vida
@@ -57,7 +79,7 @@ public class ControlPersonaje : MonoBehaviour
     private void Morir()
     {
         Debug.Log($"¡{GameManager.instancia.Nombre} ha muerto!");
-        // gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public float GetVidaPorcentaje() => vidaActual / vidaMax;

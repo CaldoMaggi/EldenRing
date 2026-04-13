@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e097203dd3d3f4daacbedce0129e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 543127516794947884}
 --- !u!50 &3028865063368375519
 Rigidbody2D:
   serializedVersion: 5
@@ -167,7 +168,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &-1571341536082210893
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

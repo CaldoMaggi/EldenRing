@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class Bandido : Player
 {
-    public Sprite spriteBandido;
-
     public Bandido() : base("Bandido", 5, 414, 82, 10, 0, 0, 96, "Mediano")
     {
     }
