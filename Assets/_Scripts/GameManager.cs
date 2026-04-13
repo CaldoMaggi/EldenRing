@@ -2,37 +2,67 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
-    public GameObject PrefabSeleccionado { get; private set; }
+    public static GameManager instancia;
 
-    public Transform puntoDeSpawn;
+    // El prefab original para instanciar en Escena 1
+    private GameObject prefabSeleccionado;
 
-    public void GuardarSeleccion(GameObject prefab)
-    {
-        PrefabSeleccionado = prefab;
-    }
+    // Snapshot de atributos leídos en Escena 0
+    public string Nombre { get; private set; }
+    public int Level { get; private set; }
+    public int Vida { get; private set; }
+    public int Concentracion { get; private set; }
+    public int PoderFisico { get; private set; }
+    public int PoderMagico { get; private set; }
+    public int PoderSanto { get; private set; }
+    public int Estamina { get; private set; }
+    public string EquipLoad { get; private set; }
+    public bool Parry { get; private set; }
 
     void Awake()
     {
-        if (Instance != null)
+        if (instancia == null)
         {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject); // sobrevive al cambio de escena
-    }
-    void Start()
-    {
-        GameObject prefab = GameManager.Instance.PrefabSeleccionado;
-
-        if (prefab != null)
-        {
-            Instantiate(prefab, puntoDeSpawn.position, Quaternion.identity);
+            instancia = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Debug.LogWarning("No hay personaje seleccionado");
+            Destroy(gameObject);
         }
+    }
+
+    public void GuardarSeleccion(GameObject prefab)
+    {
+        prefabSeleccionado = prefab;
+
+        // Lee los valores del GameObject instanciado en Escena 0
+        // que ya tiene el script Player/Astrologo con sus valores
+        Player p = prefab.GetComponent<Player>();
+
+        if (p != null)
+        {
+            Nombre = p.Nombre;
+            Level = p.Level;
+            Vida = p.Vida;
+            Concentracion = p.Concentracion;
+            PoderFisico = p.PoderFisico;
+            PoderMagico = p.PoderMagico;
+            PoderSanto = p.PoderSanto;
+            Estamina = p.Estamina;
+            EquipLoad = p.EquipLoad;
+            Parry = p.Parry;
+
+            Debug.Log($"Guardado: {Nombre} | Vida: {Vida} | Mana: {Concentracion}");
+        }
+        else
+        {
+            Debug.LogError("El prefab no tiene componente Player!");
+        }
+    }
+
+    public GameObject ObtenerPrefabSeleccionado()
+    {
+        return prefabSeleccionado;
     }
 }

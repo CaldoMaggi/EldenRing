@@ -11,16 +11,23 @@ public class Demonio : Enemigo
         Debug.Log($"[Demonio] Awake ejecutado — danio: {danio}");
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)  // 👈 2D
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log($"[Demonio] Colisión 2D detectada con: {collision.gameObject.name}");
+        Debug.Log($"[Demonio] Colisión con: {collision.gameObject.name} | Tag: {collision.gameObject.tag}");
 
-        if (!collision.gameObject.CompareTag("Player")) return;
+        if (!collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("[Demonio] No es Player, ignorando.");
+            return;
+        }
 
         if (collision.gameObject.TryGetComponent<ControlPersonaje>(out var player))
         {
             player.RecibirDaño(danio);
-            Debug.Log($"[{nombre}] tocó al jugador — {danio} de daño.");
+        }
+        else
+        {
+            Debug.LogError("[Demonio] No encontró ControlPersonaje en el jugador!");
         }
     }
 }

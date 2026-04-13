@@ -63,12 +63,12 @@ public class MenuSelection : MonoBehaviour
 
         nombreText.text = personajeActual.name.Replace("(Clone)", "").Trim();
         Player playerScript = personajeActual.GetComponent<Player>();
-        if (GameManager.Instance == null)
+        if (GameManager.instancia == null)
         {
             Debug.LogError("GameManager no existe en la escena!");
             return;
         }
-        GameManager.Instance.GuardarSeleccion(prefab);
+        GameManager.instancia.GuardarSeleccion(prefab);
         if (playerScript != null)
         {
             atributosText.text = "Nivel: " + playerScript.Level + "\n" +
