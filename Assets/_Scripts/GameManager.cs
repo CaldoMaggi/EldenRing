@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     // El prefab original para instanciar en Escena 1
     private GameObject prefabSeleccionado;
 
-    // Snapshot de atributos leídos en Escena 0
+    // atributos leídos en Escena 0
     public string Nombre { get; private set; }
     public int Level { get; private set; }
     public int Vida { get; private set; }
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         prefabSeleccionado = prefab;
 
         // Lee los valores del GameObject instanciado en Escena 0
-        // que ya tiene el script Player/Astrologo con sus valores
+        // que ya tiene el script Player y sus hijos con sus valores
         Player p = prefab.GetComponent<Player>();
 
         if (p != null)
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject ObtenerPrefabSeleccionado()
     {
-        return prefabSeleccionado;
+        return prefabSeleccionado; //llama la variable que contiene la información del prefab
     }
 
 }

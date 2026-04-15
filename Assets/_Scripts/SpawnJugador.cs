@@ -4,7 +4,7 @@ public class SpawnJugador : MonoBehaviour
 {
     [SerializeField] private Transform puntoDeSpawn;
 
-    void Start()
+    void Start() //examina si la escena tiene un GameManager y un prefab seleccionado, si no lo tiene, muestra un error en la consola
     {
         if (GameManager.instancia == null)
         {
