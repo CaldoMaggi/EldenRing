@@ -6,6 +6,8 @@ public class Cofre : MundoEntidades, IDañable, IGuardable
     private int vida = 80;
     protected bool esMimic = false; //Protected para ser asignado en el instector
 
+   
+
     // Propiedad de IDanable
     public int Vida
     {

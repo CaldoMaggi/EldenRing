@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class MundoEntidades
+public abstract class MundoEntidades : MonoBehaviour
 {
     private string nombre; // Nombre del ser
     private Vector2 posicion; // Posici�n en el mundo del ser
